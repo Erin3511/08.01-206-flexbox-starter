@@ -95,64 +95,102 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+
 html {
-  background-color: #fff;
+  background: url(../img/bkgd1.jpg) no-repeat center center fixed;
+  background-size: cover;
   height: 100%;
-  width: 100%;
+  width: 100%
 }
+
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 0 2em;
-  font-size: 1.25em;
-  height: 100%;
+  font weight: 700;
   color: #fff;
+  padding: 0em 2em;
+  height: 100%;
 }
 
-header,
-footer {
+.transparent-box {
   background-color: #222;
-  height: 80px;
-  width: 100%;
-
-}
-
-main {
-  background-color: #ccc;
-  height: 250px;
-  width: 100%;
-}
-
-header,
-footer,
-main {
-  display: flex;
-  justify-content: center;
+  background:rgba(0,0,0,0.7);
+  border-radius: 10px;
+  height: auto;
+  width: 35%;
+  display:flex;
+  justify-content: flex-start;
   align-items: center;
-
+  padding-left: .25em;
 }
+
 
 .flex-container {
   display: flex;
-  justify-content: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
-  flex-flow: row wrap;
-  justify-content:space-between;
-
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
-.flex-items {
+.div-1, .div-2, .div-3 {
+  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #fff;
   line-height: 1.5em;
-  font-size: 1.6em;
-  background-color: #f16059;
+  font-size: 1em;
+  background-color: #222;
+  background:rgba(0,0,0,0.7);
+  border-radius: 10px;
+  height: auto;
   width: 30%;
-  height: 200px;
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
+main {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  border-bottom: 1px solid #FF9B35;
+}
+
+main p {
+  font-size: 1.35em;
+}
+
+h1 {
+  color: #FF9B35;
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+h2 {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+#content p span {
+    font-family: 'Lora', sans-serif;
+    color: aqua;
+}
+
+a, a:hover, a:focus, a:active {
+     color: inherit;
+     text-decoration: none;
+}
+
+footer {
+  border-top: 1px solid #FF9B35;
+}
+
+footer i {
+  padding: 30px 20px 0 0;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -233,17 +271,15 @@ main {
    Modify as content requires.
    ========================================================================== */
 
-/* If you'd like to try a different layout on Desktop and larger screens: */
-@media (min-width: 1200px) {
-  #div-1,
-  #div-2{
-      /* set your flex value to 1 50% */
-  }
+@media all and (min-width: 1200px) {
+      .div-1, .div-2, .div-3 {
+        flex-basis: 30%;
+      }
 
-  #div-3 {
-    /* set your flex value to 1 100% */
-  }
-}
+     .div-1, .div-2, .div-3{
+       border-right: 2px solid aqua;
+      }
+   }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
